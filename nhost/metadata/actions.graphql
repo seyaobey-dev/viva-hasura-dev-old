@@ -1,0 +1,104 @@
+type Mutation {
+  create_group(
+    arg: CreateGroupInput!
+  ): CreateGroupOutput
+}
+
+type Mutation {
+  invite_member(
+    arg: InviteMemberInput!
+  ): InviteMemberOutput
+}
+
+type Mutation {
+  join_group(
+    arg: JoinGroupInput!
+  ): JoinGroupOutput
+}
+
+type Mutation {
+  payment_request(
+    arg: PaymentRequestInput!
+  ): PaymentRequestOutput
+}
+
+type Mutation {
+  payment_withdraw(
+    arg1: PaymentWithdrawInput!
+  ): PaymentWithdrawOutput
+}
+
+enum Recurrencies {
+  DAILY
+  WEEKLY
+  MONTHLY
+}
+
+enum InviteMemberStatus {
+  SUCCESS
+  SUCCESS_WHATSAPP
+  INVITATION_EXISTS
+}
+
+input CreateGroupInput {
+  creator_id: uuid!
+  group_name: String!
+  contribution_amount: Int
+  contribution_pledge: Boolean!
+  recurrency: Recurrencies
+  recurrency_day: numeric
+  recurrency_pledge: Boolean!
+}
+
+input InviteMemberInput {
+  group_id: uuid!
+  sender_user_id: uuid!
+  receiver_phone_number: String!
+}
+
+input JoinGroupInput {
+  group_id: uuid!
+  user_id: uuid!
+  invitation_id: uuid
+  contribution_amount: numeric
+  recurrency: Recurrencies
+  recurrency_day: numeric
+}
+
+input PaymentRequestInput {
+  group_id: uuid!
+  period_id: uuid!
+  member_id: uuid!
+  payment_amount: numeric!
+}
+
+input PaymentWithdrawInput {
+  group_id: uuid!
+  member_id: uuid!
+  period_id: uuid!
+  withdraw_amount: numeric!
+  recipient_name: String!
+  recipient_phone: String!
+}
+
+type CreateGroupOutput {
+  ok: Boolean!
+}
+
+type InviteMemberOutput {
+  status: InviteMemberStatus!
+}
+
+type JoinGroupOutput {
+  ok: Boolean!
+}
+
+type PaymentRequestOutput {
+  id: uuid!
+  url: String!
+}
+
+type PaymentWithdrawOutput {
+  Ok: Boolean!
+}
+

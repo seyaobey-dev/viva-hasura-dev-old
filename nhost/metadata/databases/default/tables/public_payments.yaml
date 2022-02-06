@@ -1,0 +1,19 @@
+table:
+  name: payments
+  schema: public
+object_relationships:
+- name: group
+  using:
+    foreign_key_constraint_on: group_id
+- name: member
+  using:
+    foreign_key_constraint_on: member_id
+- name: paymentStatusByPaymentStatus
+  using:
+    foreign_key_constraint_on: payment_status
+- name: paymentTypeByPaymentType
+  using:
+    foreign_key_constraint_on: payment_type
+- name: period
+  using:
+    foreign_key_constraint_on: period_id

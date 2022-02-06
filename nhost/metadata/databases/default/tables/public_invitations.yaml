@@ -1,0 +1,16 @@
+table:
+  name: invitations
+  schema: public
+object_relationships:
+- name: group
+  using:
+    foreign_key_constraint_on: group_id
+- name: invitation_status
+  using:
+    foreign_key_constraint_on: status
+- name: user
+  using:
+    foreign_key_constraint_on: receiver_user_id
+- name: userBySenderUserId
+  using:
+    foreign_key_constraint_on: sender_user_id

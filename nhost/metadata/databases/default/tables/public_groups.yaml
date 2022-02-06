@@ -1,0 +1,36 @@
+table:
+  name: groups
+  schema: public
+object_relationships:
+- name: user
+  using:
+    foreign_key_constraint_on: creator_id
+array_relationships:
+- name: invitations
+  using:
+    foreign_key_constraint_on:
+      column: group_id
+      table:
+        name: invitations
+        schema: public
+- name: members
+  using:
+    foreign_key_constraint_on:
+      column: group_id
+      table:
+        name: members
+        schema: public
+- name: payments
+  using:
+    foreign_key_constraint_on:
+      column: group_id
+      table:
+        name: payments
+        schema: public
+- name: periods
+  using:
+    foreign_key_constraint_on:
+      column: group_id
+      table:
+        name: periods
+        schema: public

@@ -1,0 +1,12 @@
+table:
+  name: payment_types
+  schema: public
+is_enum: true
+array_relationships:
+- name: payments
+  using:
+    foreign_key_constraint_on:
+      column: payment_type
+      table:
+        name: payments
+        schema: public

@@ -1,0 +1,12 @@
+table:
+  name: recurrencies
+  schema: public
+is_enum: true
+array_relationships:
+- name: members
+  using:
+    foreign_key_constraint_on:
+      column: recurrency
+      table:
+        name: members
+        schema: public
