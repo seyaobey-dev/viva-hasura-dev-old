@@ -43,6 +43,20 @@ custom_types:
     - description: null
       is_deprecated: null
       value: INVITATION_EXISTS
+  - name: Reminders
+    values:
+    - description: null
+      is_deprecated: null
+      value: LOW
+    - description: null
+      is_deprecated: null
+      value: NORMAL
+    - description: null
+      is_deprecated: null
+      value: HIGH
+    - description: null
+      is_deprecated: null
+      value: VERY_HIGH
   input_objects:
   - name: CreateGroupInput
   - name: InviteMemberInput
