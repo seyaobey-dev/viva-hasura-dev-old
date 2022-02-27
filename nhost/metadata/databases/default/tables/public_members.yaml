@@ -5,6 +5,9 @@ object_relationships:
 - name: group
   using:
     foreign_key_constraint_on: group_id
+- name: notificationFrequencyByNotificationFrequency
+  using:
+    foreign_key_constraint_on: notification_frequency
 - name: recurrencyByRecurrency
   using:
     foreign_key_constraint_on: recurrency
