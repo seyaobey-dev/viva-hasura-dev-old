@@ -7,7 +7,7 @@ object_relationships:
     foreign_key_constraint_on: group_id
 - name: notificationFrequencyByNotificationFrequency
   using:
-    foreign_key_constraint_on: notification_frequency
+    foreign_key_constraint_on: reminders_frequency
 - name: recurrencyByRecurrency
   using:
     foreign_key_constraint_on: recurrency

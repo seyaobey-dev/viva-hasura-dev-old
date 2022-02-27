@@ -1,0 +1,12 @@
+table:
+  name: reminders_frequencies
+  schema: public
+is_enum: true
+array_relationships:
+- name: members
+  using:
+    foreign_key_constraint_on:
+      column: reminders_frequency
+      table:
+        name: members
+        schema: public
