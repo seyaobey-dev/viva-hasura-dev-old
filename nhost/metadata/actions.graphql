@@ -40,6 +40,13 @@ enum InviteMemberStatus {
   INVITATION_EXISTS
 }
 
+enum Reminders {
+  LOW
+  NORMAL
+  HIGH
+  VERY_HIGH
+}
+
 input CreateGroupInput {
   creator_id: uuid!
   group_name: String!
@@ -48,6 +55,7 @@ input CreateGroupInput {
   recurrency: Recurrencies
   recurrency_day: numeric
   recurrency_pledge: Boolean!
+  reminder: Reminders!
 }
 
 input InviteMemberInput {
