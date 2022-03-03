@@ -28,6 +28,12 @@ type Mutation {
   ): PaymentWithdrawOutput
 }
 
+type Mutation {
+  test_action(
+    arg1: SampleInput!
+  ): SampleOutput
+}
+
 enum Recurrencies {
   DAILY
   WEEKLY
@@ -89,6 +95,11 @@ input PaymentWithdrawInput {
   recipient_phone: String!
 }
 
+input SampleInput {
+  username: String!
+  password: String!
+}
+
 type CreateGroupOutput {
   ok: Boolean!
 }
@@ -108,5 +119,9 @@ type PaymentRequestOutput {
 
 type PaymentWithdrawOutput {
   Ok: Boolean!
+}
+
+type SampleOutput {
+  accessToken: String!
 }
 

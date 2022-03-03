@@ -19,6 +19,10 @@ actions:
   definition:
     kind: synchronous
     handler: '{{SERVER_URL}}/api/payments/withdraw'
+- name: test_action
+  definition:
+    kind: synchronous
+    handler: '{{SERVER_URL}}/test'
 custom_types:
   enums:
   - name: Recurrencies
@@ -63,10 +67,12 @@ custom_types:
   - name: JoinGroupInput
   - name: PaymentRequestInput
   - name: PaymentWithdrawInput
+  - name: SampleInput
   objects:
   - name: CreateGroupOutput
   - name: InviteMemberOutput
   - name: JoinGroupOutput
   - name: PaymentRequestOutput
   - name: PaymentWithdrawOutput
+  - name: SampleOutput
   scalars: []
